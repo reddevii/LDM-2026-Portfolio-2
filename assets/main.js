@@ -38,92 +38,114 @@ document.addEventListener('DOMContentLoaded', function () {
     updateGallery();
   }
 
-  /* My playlist on the about page. The story is, I tried using the Spotify API as you mentioned previously, but it wouldn't work! I tried for hours, and I even created a Spotify Developer profile. It wouldn't load, so I tried connecting to Spotify through a third-party called Last.fm, but it still wouldn't work. So, it was a little disappointing, but I made it look better, and I fixed the JSON file.
-  What this does is load the data from the JSON and uses the next, previous, and shuffle buttons. I am currently adding MP3 files downloaded from the internet. If you are reading this and haven't seen them yet, however, I can only get downloads for some songs, so it is taking longer than I thought. I will have to change each one with the downloads I can get. */
-  
-  const songImage = document.getElementById('song-image');
-  const songName = document.getElementById('song-name');
-  const songArtist = document.getElementById('song-artist');
-  const songGenre = document.getElementById('song-genre');
-  const songMeta = document.getElementById('song-meta');
-  const prevSongButton = document.getElementById('prev-song');
-  const nextSongButton = document.getElementById('next-song');
-  const shuffleButton = document.getElementById('shuffle-song');
+ /* My playlist on the about page. The story is, I tried using the Spotify API as you mentioned previously, but it wouldn't work! I tried for hours, and I even created a Spotify Developer profile. It wouldn't load, so I tried connecting to Spotify through a third-party called Last.fm, but it still wouldn't work. So, it was a little disappointing, but I made it look better, and I fixed the JSON file.
+What this does is load the data from the JSON and uses the next, previous, and shuffle buttons. I am currently adding MP3 files downloaded from the internet. If you are reading this and haven't seen them yet, however, I can only get downloads for some songs, so it is taking longer than I thought. I will have to change each one with the downloads I can get. */
 
-  if (songImage && songName && songArtist && songGenre && songMeta && prevSongButton && nextSongButton && shuffleButton) {
-    let songs = [];  //data from JSON//
-    let currentSongIndex = 0; //current song showing//
+const songImage = document.getElementById('song-image');
+const songName = document.getElementById('song-name');
+const songArtist = document.getElementById('song-artist');
+const songGenre = document.getElementById('song-genre');
+const songMeta = document.getElementById('song-meta');
 
-  //current song info//
-    function renderSong() {
-      if (!songs.length) return;
-      const song = songs[currentSongIndex];
-      songImage.src = song.cover;
-      songName.textContent = song.title;
-      songArtist.textContent = song.artist;
-      songGenre.textContent = song.genre;
-      songMeta.textContent = (currentSongIndex + 1) + ' / ' + songs.length;
-    }
+const prevBtn = document.getElementById('prev-song');
+const nextBtn = document.getElementById('next-song');
+const shuffleBtn = document.getElementById('shuffle-song');
+const playPauseBtn = document.getElementById('playpause-song');
 
-    //moves to next song and does a loop when finished.//
-    function nextSong() {
-      if (!songs.length) return;
-      currentSongIndex = (currentSongIndex + 1) % songs.length;
-      renderSong();
-    }
+const playIcon = playPauseBtn?.querySelector('i');
 
-    //moves to the previous song and loops to the end if you go back far enough.//
-    function prevSong() {
-      if (!songs.length) return;
-      currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-      renderSong();
-    }
+const audio = new Audio(); //for the audio mp3 downloads//
+let songs = [];
+let currentSongIndex = 0;
+let isPlaying = false;
 
-    //random song shuffle//
-    function shuffleSong() {
-      if (!songs.length) return;
-      let nextIndex = currentSongIndex;
-      if (songs.length > 1) {
-        while (nextIndex === currentSongIndex) {
-          nextIndex = Math.floor(Math.random() * songs.length);
-        }
-      }
-      currentSongIndex = nextIndex;
-      renderSong();
-    }
+//current song info//
+function renderSong() {
+  if (!songs.length) return;
 
-    //pretty self-explanatory--buttons prev and next for music.//
-    prevSongButton.addEventListener('click', function () {
-      prevSong();
-    });
+  const song = songs[currentSongIndex];
 
-   //shuffle button//
-    nextSongButton.addEventListener('click', function () {
-      nextSong();
-    });
+  songImage.src = song.cover;
+  songName.textContent = song.title;
+  songArtist.textContent = song.artist;
+  songGenre.textContent = song.genre;
+  songMeta.textContent = `${currentSongIndex + 1} / ${songs.length}`;
 
-    shuffleButton.addEventListener('click', function () {
-      shuffleSong();
-      shuffleButton.classList.add('active');
-      setTimeout(function () {
-        shuffleButton.classList.remove('active');
-      }, 300);
-    });
+  audio.src = song.audio;
+  audio.load();
 
-    //fetch the data from the music.json file
-    fetch('music.json')
-      .then(function (res) {
-        return res.json();
-      })
-      .then(function (data) {
-        if (data && Array.isArray(data.songs)) {
-          songs = data.songs;
-          currentSongIndex = 0;
-          renderSong();
-        }
-      })
-      .catch(function () {}); //if the json cant load it will fail.//
+  isPlaying = false;
+  updatePlayIcon();
+}
+
+function updatePlayIcon() {
+  if (!playIcon) return;
+  playIcon.className = isPlaying ? 'bx bx-pause' : 'bx bx-play';
+}
+
+function playSong() {  //this is for the play button to make sure it works when clicked and plays the audio.//
+  audio.play();
+  isPlaying = true;
+  updatePlayIcon();
+}
+
+function pauseSong() { //same thing but for the pause button.//
+  audio.pause();
+  isPlaying = false;
+  updatePlayIcon();
+}
+
+function togglePlayPause() {
+  if (!audio.src) return;
+  isPlaying ? pauseSong() : playSong();
+}
+
+//moves to next song and does a loop when finished.//
+function nextSong() {
+  if (!songs.length) return;
+  currentSongIndex = (currentSongIndex + 1) % songs.length;
+  renderSong();
+  playSong(); //auto-play when skipping
+}
+
+//moves to the previous song and loops to the end if you go back far enough.//
+function prevSong() {
+  if (!songs.length) return;
+  currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+  renderSong();
+  playSong(); //auto-play when skipping
+}
+
+//random song shuffle//
+function shuffleSong() {
+  if (songs.length <= 1) return;
+
+  let nextIndex = currentSongIndex;
+  while (nextIndex === currentSongIndex) {
+    nextIndex = Math.floor(Math.random() * songs.length);
   }
+
+  currentSongIndex = nextIndex;
+  renderSong();
+  playSong();
+}
+
+//pretty self-explanatory--buttons prev, next, play/pause, shuffle for music.//
+prevBtn?.addEventListener('click', prevSong);
+nextBtn?.addEventListener('click', nextSong);
+shuffleBtn?.addEventListener('click', shuffleSong);
+playPauseBtn?.addEventListener('click', togglePlayPause);
+
+audio.addEventListener('ended', nextSong); //once the song ends, it will automatically go to the next song.//
+
+//fetch the data from the music.json file
+fetch('music.json')
+  .then(res => res.json())
+  .then(data => {
+    songs = data.songs || [];
+    renderSong();
+  })
+  .catch(function () {}); //if the json cant load it will fail.//
 
   //Light and dark mode! This one is funny because I have a white-and-black portfolio with orange accents, so the white parts change to black or a dark brown.//
   var body = document.body;
