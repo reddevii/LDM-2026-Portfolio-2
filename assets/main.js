@@ -1,26 +1,34 @@
 document.addEventListener('DOMContentLoaded', function () {
+  //Welcome back to my code. I have updated basically...everything. I wanted to make a more professional-looking portfolio, so I revamped everything in HTML, CSS, and JavaScript. I am very pleased with the outcome. I had some difficulties in some areas, but otherwise, I think this is a functional and fun portfolio. // 
+  
+  //Rotating image gallery on home page. It auto-rotates, but you can also manually rotate it by pressing the previous and next buttons at the bottom. The gallery is to have a small glimspe into the first semester as an IDM student. //
   const imageContainerEl = document.querySelector('.image-container');
   const prevEl = document.getElementById('Prev');
   const nextEl = document.getElementById('Next');
 
+ //This is for running the gallery when all of its elements are loaded on the page. It also includes the rotation angle and timeout.//
   if (imageContainerEl && prevEl && nextEl) {
     let x = 0;
     let timer;
 
+    //This is the update setting that controls the gallery's rotation and restarts its rotation.//
     function updateGallery() {
       imageContainerEl.style.transform = 'perspective(1000px) rotateY(' + x + 'deg)';
+      //3 seconds.//
       timer = setTimeout(function () {
         x -= 45;
         updateGallery();
       }, 3000);
     }
 
+//This is to rotate it backwards when you hit the previous button--which stops the rotation on click.//
     prevEl.addEventListener('click', function () {
       x += 45;
       clearTimeout(timer);
       updateGallery();
     });
 
+    //Same thing but for the next button--forward.//
     nextEl.addEventListener('click', function () {
       x -= 45;
       clearTimeout(timer);
@@ -30,6 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
     updateGallery();
   }
 
+  /* My playlist on the about page. The story is, I tried using the Spotify API as you mentioned previously, but it wouldn't work! I tried for hours, and I even created a Spotify Developer profile. It wouldn't load, so I tried connecting to Spotify through a third-party called Last.fm, but it still wouldn't work. So, it was a little disappointing, but I made it look better, and I fixed the JSON file.
+  What this does is load the data from the JSON and uses the next, previous, and shuffle buttons. I am currently adding MP3 files downloaded from the internet. If you are reading this and haven't seen them yet, however, I can only get downloads for some songs, so it is taking longer than I thought. I will have to change each one with the downloads I can get. */
+  
   const songImage = document.getElementById('song-image');
   const songName = document.getElementById('song-name');
   const songArtist = document.getElementById('song-artist');
@@ -40,9 +51,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const shuffleButton = document.getElementById('shuffle-song');
 
   if (songImage && songName && songArtist && songGenre && songMeta && prevSongButton && nextSongButton && shuffleButton) {
-    let songs = [];
-    let currentSongIndex = 0;
+    let songs = [];  //data from JSON//
+    let currentSongIndex = 0; //current song showing//
 
+  //current song info//
     function renderSong() {
       if (!songs.length) return;
       const song = songs[currentSongIndex];
@@ -53,18 +65,21 @@ document.addEventListener('DOMContentLoaded', function () {
       songMeta.textContent = (currentSongIndex + 1) + ' / ' + songs.length;
     }
 
+    //moves to next song and does a loop when finished.//
     function nextSong() {
       if (!songs.length) return;
       currentSongIndex = (currentSongIndex + 1) % songs.length;
       renderSong();
     }
 
+    //moves to the previous song and loops to the end if you go back far enough.//
     function prevSong() {
       if (!songs.length) return;
       currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
       renderSong();
     }
 
+    //random song shuffle//
     function shuffleSong() {
       if (!songs.length) return;
       let nextIndex = currentSongIndex;
@@ -77,10 +92,12 @@ document.addEventListener('DOMContentLoaded', function () {
       renderSong();
     }
 
+    //pretty self-explanatory--buttons prev and next for music.//
     prevSongButton.addEventListener('click', function () {
       prevSong();
     });
 
+   //shuffle button//
     nextSongButton.addEventListener('click', function () {
       nextSong();
     });
@@ -93,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 300);
     });
 
+    //fetch the data from the music.json file
     fetch('../music.json')
       .then(function (res) {
         return res.json();
@@ -104,12 +122,14 @@ document.addEventListener('DOMContentLoaded', function () {
           renderSong();
         }
       })
-      .catch(function () {});
+      .catch(function () {}); //if the json cant load it will fail.//
   }
 
+  //Light and dark mode! This one is funny because I have a white-and-black portfolio with orange accents, so the white parts change to black or a dark brown.//
   var body = document.body;
   var toggle = document.getElementById('theme-toggle');
 
+  //changes the little icon depending on whether you are on light or dark mode.//
   function setIcon(mode) {
     if (!toggle) return;
     var icon = toggle.querySelector('i');
@@ -123,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  //default to light theme//
   var saved = localStorage.getItem('theme');
   var initial = saved === 'dark' ? 'dark' : 'light';
 
@@ -130,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
   body.classList.add(initial === 'dark' ? 'dark-mode' : 'light-mode');
   setIcon(initial);
 
+  //toggles the mode when you click the button.//
   if (toggle) {
     toggle.addEventListener('click', function () {
       if (body.classList.contains('dark-mode')) {
@@ -146,6 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+ //When I first made this portfolio, I didn't realise that when you click into another page, the orange highlight didn't follow to that page on the nav bar and only stayed on home, so I changed that.//
   var navLinks = document.querySelectorAll('.navbar a');
   var currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
@@ -160,6 +183,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+//This is my portfolio quiz in my projects page. It had 7 multiple-choice questions and a next button. Once you are finished, your score will pop up.//
 document.addEventListener("DOMContentLoaded", function () {
   const questions = [
     {
@@ -227,15 +252,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   ];
 
+  //connects it to the HTML//
   const questionElement = document.getElementById("question");
   const answerButtons = document.getElementById("answer-buttons");
   const nextButton = document.getElementById("next-btn");
 
   if (!questionElement || !answerButtons || !nextButton) return;
 
-  let currentQuestionIndex = 0;
-  let score = 0;
+  let currentQuestionIndex = 0;  //the current question youre on//
+  let score = 0;  //tracks correct answers//
 
+  //starts/restarts the quiz after you finish it//
   function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
@@ -248,8 +275,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const currentQuestion = questions[currentQuestionIndex];
     const questionNo = currentQuestionIndex + 1;
-    questionElement.textContent = questionNo + ". " + currentQuestion.question;
+    questionElement.textContent = questionNo + ". " + currentQuestion.question;  //does the question and numbers them//
 
+    //button for each possible answer//
     currentQuestion.answers.forEach(function (answer) {
       const button = document.createElement("button");
       button.textContent = answer.text;
@@ -282,6 +310,7 @@ document.addEventListener("DOMContentLoaded", function () {
       selectedBtn.classList.add("incorrect");
     }
 
+    //reveals correct answer and stops buttons//
     Array.from(answerButtons.children).forEach(function (button) {
       if (button.dataset.correct === "true") {
         button.classList.add("correct");
@@ -289,9 +318,11 @@ document.addEventListener("DOMContentLoaded", function () {
       button.disabled = true;
     });
 
+    //next button//
     nextButton.style.display = "block";
   }
 
+//final score and the next button becomes play again//
   function showScore() {
     resetState();
     questionElement.textContent = "You scored " + score + "/" + questions.length + ".";
@@ -319,7 +350,7 @@ document.addEventListener("DOMContentLoaded", function () {
   startQuiz();
 });
 
-
+//validation for my contact form.//
 const form = document.getElementById("contact-form");
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
@@ -338,31 +369,33 @@ form.addEventListener("submit", async (e) => {
 
   let messages = [];
 
-  if (nameInput.value.trim() === "") {
+  if (nameInput.value.trim() === "") { //name validation//
     messages.push("Name is required");
   }
 
-  const email = emailInput.value.trim();
+  const email = emailInput.value.trim(); //email validation//
   if (email === "" || !email.includes("@") || !email.includes(".")) {
     messages.push("Please enter a valid email address");
   }
 
-  if (messageInput.value.trim().length < 10) {
+  if (messageInput.value.trim().length < 10) { //this is so that I get actual written responses to email and not one-word messages.//
     messages.push("Message must be at least 10 characters");
   }
 
   if (messages.length > 0) {
-    errorElement.innerText = messages.join(", ");
+    errorElement.innerText = messages.join(", "); //if validation fails, it will show (hopefully) an error message and not send the message.//
     errorElement.classList.add("show");
     statusElement.textContent = "";
     return;
   }
 
+  //shows sending status//
   errorElement.innerText = "";
   errorElement.classList.remove("show");
   statusElement.textContent = "Sending…";
 
   try { 
+    //this is for submitting the form through a fetch function. If the server has an error, it will treat it as a failure. And if you succeed, then you'll get a success message.//
     const response = await fetch(form.action, {
       method: "POST",
       body: new FormData(form),
