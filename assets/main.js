@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     //fetch the data from the music.json file
-    fetch('../music.json')
+    fetch('music.json')
       .then(function (res) {
         return res.json();
       })
