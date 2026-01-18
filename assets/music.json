@@ -5,24 +5,24 @@
       "title": "La Perla (ft. Yahritza Y Su Esencia)",
       "artist": "ROSALÍA",
       "genre": "Pop / Flamenco",
-      "cover": "./assets/images/reliquia.jpeg",
-      "audio": "/assets/audio/ROSALÍA - La Perla (ft. Yahritza Y Su Esencia) (LetraLyrics).mp3"
+      "cover": "/images/reliquia.jpeg",
+      "audio": "/audio/ROSALÍA - La Perla (ft. Yahritza Y Su Esencia) (LetraLyrics).mp3"
     },
     {
       "id": 2,
       "title": "Opalite",
       "artist": "Taylor Swift",
       "genre": "Pop",
-      "cover": "./assets/images/opalite.jpeg",
-      "audio": "/assets/audio/Taylor Swift - Opalite (Official HD Audio).mp3"
+      "cover": "/images/opalite.jpeg",
+      "audio": "/audio/Taylor Swift - Opalite (Official HD Audio).mp3"
     },
     {
       "id": 3,
       "title": "IBELONGIIU",
       "artist": "G-Dragon",
       "genre": "K-Hop / K-Pop",
-      "cover": "./assets/images/ibelongiiu.jpeg",
-      "audio": "/assets/audio/G-DRAGON - IBELONGIIU (Official Audio).mp3"
+      "cover": "/images/ibelongiiu.jpeg",
+      "audio": "/audio/G-DRAGON - IBELONGIIU (Official Audio).mp3"
     },
     {
       "id": 4,
@@ -37,40 +37,40 @@
       "title": "DtFM",
       "artist": "Bad Bunny",
       "genre": "Reggaeton / House",
-      "cover": "./assets/images/DtFM.jpeg",
-      "audio": "/assets/audio/Bad Bunny - DtMF (Letra).mp3"
+      "cover": "/images/DtFM.jpeg",
+      "audio": "/audio/Bad Bunny - DtMF (Letra).mp3"
     },
     {
       "id": 6,
       "title": "The Fate Of Ophelia",
       "artist": "Taylor Swift",
       "genre": "Funk / Dance-Pop",
-      "cover": "./assets/images/opalite.jpeg",
-      "audio": "/assets/audio/Taylor Swift - The Fate Of Ophelia (Lyrics).mp3"
+      "cover": "/images/opalite.jpeg",
+      "audio": "/audio/Taylor Swift - The Fate Of Ophelia (Lyrics).mp3"
     },
     {
       "id": 7,
       "title": "luther (with SZA)",
       "artist": "Kendrick Lamar",
       "genre": "Hip-Hop / R&B",
-      "cover": "./assets/images/luther.jpeg",
-      "audio": "/assets/audio/Luther _with sza_ - Kendrick Lamar.mp3"
+      "cover": "/images/luther.jpeg",
+      "audio": "/audio/Luther _with sza_ - Kendrick Lamar.mp3"
     },
     {
       "id": 8,
       "title": "Nice For What",
       "artist": "Drake",
       "genre": "Hip-Hop",
-      "cover": "./assets/images/NFW.jpeg",
-      "audio": "/assets/audio/Nice For What.mp3"
+      "cover": "/images/NFW.jpeg",
+      "audio": "/audio/Nice For What.mp3"
     },
     {
       "id": 9,
       "title": "Magnolias",
       "artist": "ROSALÍA",
       "genre": "Pop / Flamenco",
-      "cover": "./assets/images/reliquia.jpeg",
-      "audio": "/assets/audio/5. ROSALÍA - Magnolias (Official Lyric Video) [KYVf37pRXCw] (1).mp3"
+      "cover": "/images/reliquia.jpeg",
+      "audio": "/audio/5. ROSALÍA - Magnolias (Official Lyric Video) [KYVf37pRXCw] (1).mp3"
     }
  ]
 }
