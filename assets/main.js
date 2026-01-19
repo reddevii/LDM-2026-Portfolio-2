@@ -119,7 +119,7 @@ playPauseBtn?.addEventListener('click', togglePlayPause);
 
 audio.addEventListener('ended', nextSong);
 
-fetch('/music.json')
+fetch('music.json')
   .then(res => res.json())
   .then(data => {
     songs = data.songs || [];
