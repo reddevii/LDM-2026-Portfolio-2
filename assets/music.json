@@ -5,7 +5,7 @@
       "title": "La Perla (ft. Yahritza Y Su Esencia)",
       "artist": "ROSALÍA",
       "genre": "Pop / Flamenco",
-      "cover": "./images/reliquia.jpeg",
+      "cover": "images/reliquia.jpeg",
       "audio": "audio/ROSALÍA - La Perla (ft. Yahritza Y Su Esencia) (LetraLyrics).mp3"
     },
     {
@@ -13,7 +13,7 @@
       "title": "Opalite",
       "artist": "Taylor Swift",
       "genre": "Pop",
-      "cover": "./images/opalite.jpeg",
+      "cover": "images/opalite.jpeg",
       "audio": "audio/Taylor Swift - Opalite (Official HD Audio).mp3"
     },
     {
@@ -21,7 +21,7 @@
       "title": "IBELONGIIU",
       "artist": "G-Dragon",
       "genre": "K-Hop / K-Pop",
-      "cover": "./images/ibelongiiu.jpeg",
+      "cover": "images/ibelongiiu.jpeg",
       "audio": "audio/G-DRAGON - IBELONGIIU (Official Audio).mp3"
     },
     {
@@ -29,7 +29,7 @@
       "title": "I was King (Guitar Cover)",
       "artist": "ONE OK ROCK",
       "genre": "J-Rock / Alternative",
-      "cover": "./images/oneokrock.png",
+      "cover": "images/oneokrock.png",
       "audio": "audio/ONE OK ROCK - I was King (Guitar Cover).mp3"
     },
     {
@@ -37,7 +37,7 @@
       "title": "DtFM",
       "artist": "Bad Bunny",
       "genre": "Reggaeton / House",
-      "cover": "./images/DtFM.jpeg",
+      "cover": "images/DtFM.jpeg",
       "audio": "audio/Bad Bunny - DtMF (Letra).mp3"
     },
     {
@@ -45,7 +45,7 @@
       "title": "The Fate Of Ophelia",
       "artist": "Taylor Swift",
       "genre": "Funk / Dance-Pop",
-      "cover": "./images/opalite.jpeg",
+      "cover": "images/opalite.jpeg",
       "audio": "audio/Taylor Swift - The Fate Of Ophelia (Lyrics).mp3"
     },
     {
@@ -53,7 +53,7 @@
       "title": "luther (with SZA)",
       "artist": "Kendrick Lamar",
       "genre": "Hip-Hop / R&B",
-      "cover": "./images/luther.jpeg",
+      "cover": "images/luther.jpeg",
       "audio": "audio/Luther _with sza_ - Kendrick Lamar.mp3"
     },
     {
@@ -61,7 +61,7 @@
       "title": "Nice For What",
       "artist": "Drake",
       "genre": "Hip-Hop",
-      "cover": "./images/NFW.jpeg",
+      "cover": "images/NFW.jpeg",
       "audio": "audio/Nice For What.mp3"
     },
     {
@@ -69,7 +69,7 @@
       "title": "Magnolias",
       "artist": "ROSALÍA",
       "genre": "Pop / Flamenco",
-      "cover": "./images/reliquia.jpeg",
+      "cover": "images/reliquia.jpeg",
       "audio": "audio/5. ROSALÍA - Magnolias (Official Lyric Video) [KYVf37pRXCw] (1).mp3"
     }
  ]
