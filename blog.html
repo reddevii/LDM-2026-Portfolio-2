@@ -1,81 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | LDM Portfolio</title>
-    <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Lilly Majors Portfolio</title>
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <script src="./assets/main.js" defer></script>
+  <script src="./assets/blog.js" defer></script>
 </head>
-
-<script src="./assets/main.js"></script>
-
 <body>
-    <header class="header">
-  <a href="index.html" class="logo">
-    <span class="span1">Lilly </span><span class="span2">Majors</span>
-  </a>
-
-  <nav class="navbar">
-    <a href="index.html" class="active">Home</a>
+<header class="header">
+  <a href="index.html" class="logo"><span class="span1">Lilly </span><span class="span2">Majors</span></a>
+  <nav class="navbar" aria-label="Primary navigation">
+    <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="blog.html">Blog</a>
+    <a href="blog.html" class="active" aria-current="page">Blog</a>
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
   </nav>
-
   <div class="header-actions">
     <a href="contact.html" class="contact">Contact Me</a>
-    <button id="theme-toggle" class="theme-toggle">
-      <i class="bx bx-moon"></i>
-    </button>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode"><i class="bx bx-moon"></i></button>
   </div>
 </header>
-
-    <section class="blog blog-page">
-        <h2>All Blog Posts</h2>
-        <div class="blog-list">
-            <article class="blog-item">
-                <h3>Coming Soon</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                <a href="#" class="btn-2">Coming Soon</a>
-            </article>
-
-            <article class="blog-item">
-                <h3>Coming Soon</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                <a href="#" class="btn-2">Coming Soon</a>
-            </article>
-
-            <article class="blog-item">
-                <h3>Coming Soon</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                <a href="#" class="btn-2">Coming Soon</a>
-            </article>
-
-        </div>
-    </section>
-
-    <footer class="footer">
+<main class="writing-page">
+  <section class="writing-intro"><span class="writing-kicker">Writing portfolio</span><div class="writing-intro-grid"><h1>Stories, people, and impact.</h1><div class="writing-intro-copy"><p>Profiles, research stories, cultural features and institutional journalism written for the Kansas State University Foundation. Translating research, community impact and human experience into clear, engaging stories.</p></div></div></section>
+  <section class="featured-writing" aria-labelledby="featured-title"><div class="writing-section-heading"><div><span class="writing-kicker">Featured stories</span><h2 id="featured-title">Selected work</h2></div><div class="featured-controls"><button id="featured-previous" class="featured-control" type="button" aria-label="Previous featured story"><i class="bx bx-left-arrow-alt"></i></button><button id="featured-next" class="featured-control" type="button" aria-label="Next featured story"><i class="bx bx-right-arrow-alt"></i></button></div></div><div id="featured-stage" class="featured-stage" aria-live="polite"></div></section>
+  <section class="writing-archive" aria-labelledby="archive-title"><div class="writing-section-heading archive-heading"><div><span class="writing-kicker">Full archive</span><h2 id="archive-title">Explore the stories</h2></div><p id="results-count" class="results-count">Loading stories...</p></div><div id="article-grid" class="writing-grid" aria-live="polite"><p class="blog-loading">Loading articles...</p></div><p id="no-articles" class="no-articles" hidden>No articles are available.</p></section>
+</main>
+<div id="article-modal" class="article-modal" aria-hidden="true"><div class="article-modal-overlay" data-close-modal></div><article class="article-modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="article-modal-close" type="button" data-close-modal aria-label="Close article"><i class="bx bx-x"></i></button><div id="article-modal-content"></div></article></div>
+<footer class="footer">
   <div class="social">
-    <a href="https://www.linkedin.com/in/lilly-majors-0a1413186" target="_blank" rel="noopener noreferrer">
-      <i class="bx bxl-linkedin"></i>
-    </a>
-    <a href="https://github.com/reddevii" target="_blank" rel="noopener noreferrer">
-      <i class="bx bxl-github"></i>
-    </a>
+    <a href="https://www.linkedin.com/in/lilly-majors-0a1413186" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+    <a href="https://github.com/reddevii" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bx bxl-github"></i></a>
   </div>
-
   <ul class="list">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Me</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About Me</a></li><li><a href="blog.html">Blog</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li>
   </ul>
-
   <p class="copyright">&copy; 2026 LDM Portfolio | All rights reserved.</p>
 </footer>
-
 </body>
 </html>
