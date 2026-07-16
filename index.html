@@ -1,166 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LDM Portfolio | Home</title>
-    <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LDM Portfolio | Home</title>
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <script src="./assets/main.js" defer></script>
+  <script src="./assets/blog.js" defer></script>
+  
 </head>
-
-<script src="./assets/main.js"></script>
-
 <body>
-   <header class="header">
-  <a href="index.html" class="logo">
-    <span class="span1">Lilly </span><span class="span2">Majors</span>
-  </a>
-
-  <nav class="navbar">
-    <a href="index.html" class="active">Home</a>
+<header class="header">
+  <a href="index.html" class="logo"><span class="span1">Lilly </span><span class="span2">Majors</span></a>
+  <nav class="navbar" aria-label="Primary navigation">
+    <a href="index.html" class="active" aria-current="page">Home</a>
     <a href="about.html">About</a>
     <a href="blog.html">Blog</a>
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
   </nav>
-
   <div class="header-actions">
     <a href="contact.html" class="contact">Contact Me</a>
-    <button id="theme-toggle" class="theme-toggle">
-      <i class="bx bx-moon"></i>
-    </button>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode"><i class="bx bx-moon"></i></button>
   </div>
 </header>
+<main>
+  <section class="Home" id="home">
+    <div class="home-content">
+      <h3>Hi</h3>
+      <h1>I'm <span class="span1">Lilly</span><br> a Creative Technologist</h1>
+      <p>I’m an interactive media creator with a background in strategic communications, storytelling, teaching, and digital design. I enjoy learning new tools and exploring different ways to tell stories through technology.</p>
+      <div class="btn-box">
+        <a href="./assets/files/MajorsLilly_Resume copy.docx" class="btn-1" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="projects.html" class="btn-2">View Projects</a>
+      </div>
+    </div>
+    <div class="img-box"><img src="./assets/images/lilly pic1.1 (1).jpg" alt="Lilly smiling"></div>
+  </section>
 
-    <section class="Home" id="home">
-        <div class="home-content">
-            <h3>Hi</h3>
-            <h1>I'm <span class="span1">Lilly</span><br> a Creative Technologist</h1>
-            <p>I’m an interactive media creator with a background in strategic communications, storytelling, teaching, and digital design. I love learning and exploring varying narratives, technology.</p>
-            <div class="btn-box">
-                <a href="./assets/files/Lilly Majors Resume 012026 (1).pdf" class="btn-1" target="_blank">Resume</a>
-                <a href="./assets/files/LILLY MAJORS ATS COVER LETTER V1 copy.pdf" class="btn-2" target="_blank">CV</a>
-            </div>
-        </div>
+  <section class="about home-about" id="about">
+    <div class="about-img"><img src="./assets/images/WhatsApp Image 2026-07-12 at 18.08.31.jpeg" alt="Lilly with crown"></div>
+    <div class="about-content">
+      <h2 class="heading">About</h2>
+      <h3>Interactive Media Creator</h3>
+      <p>I’m based in Dublin, studying Interactive Digital Media at Trinity College while building projects in XR/AR, web, 3D, and audio. Before that, I studied Strategic Communications at Kansas State University and worked across writing, content, and education.</p>
+      <p>This portfolio brings together work from my studies, professional experience and personal projects.</p>
+      <a href="about.html" class="btn-2">More About Me</a>
+    </div>
+  </section>
 
-        <div class="img-box">
-            <img src="./assets/images/lilly pic1.1 (1).jpg" alt="Lilly smiling picture">
-        </div>
-    </section>
+  <section class="home-featured-blog" aria-labelledby="home-featured-title">
+    <div class="home-featured-heading">
+      <div><span class="section-label">Featured writing</span><h2 id="home-featured-title">Selected Blog Posts</h2></div>
+      <div class="home-featured-controls">
+        <button id="home-featured-previous" class="featured-control" type="button" aria-label="Previous featured article"><i class="bx bx-left-arrow-alt"></i></button>
+        <button id="home-featured-next" class="featured-control" type="button" aria-label="Next featured article"><i class="bx bx-right-arrow-alt"></i></button>
+      </div>
+    </div>
+    <div id="home-featured-stage" class="home-featured-stage" aria-live="polite"></div>
+    <div class="blog-more"><a href="blog.html" class="btn-2">View All Articles</a></div>
+  </section>
 
-    <section class="about home-about" id="about">
-        <div class="about-img">
-            <img src="./assets/images/lilly pic5.1.jpg" alt="Lilly with lipstick">
-        </div>
+  <section class="projects" id="projects">
+    <h2>Featured Projects</h2>
+    <div class="projects-list">
+      <div class="project-item"><h3>Coming Soon</h3><p>Interactive media and design work will be added here.</p><a href="projects.html" class="btn-2">View Project</a></div>
+      <div class="project-item"><h3>Coming Soon</h3><p>Web, visual and multimedia projects will be added here.</p><a href="projects.html" class="btn-2">View Project</a></div>
+      <div class="project-item"><h3>Coming Soon</h3><p>More work from my MSc and personal practice is on the way.</p><a href="projects.html" class="btn-2">View Project</a></div>
+    </div>
+    <div class="projects-more"><a href="projects.html" class="btn-2">View All Projects</a></div>
+  </section>
 
-        <div class="about-content">
-            <h2 class="heading">About</h2>
-            <h3>Interactive Media Creator</h3>
-            <p>I’m currently based in Dublin, studying Interactive Digital Media at Trinity College while building projects in XR/AR, web, 3D, and audio. Before that, I studied Strategic Communications at Kansas State University and worked across writing, content, and education.</p>
-            <p>This portfolio brings together my favorite projects I have completed during my time in secondary education.</p>
-            <a href="about.html" class="btn-2">More About Me</a>
-        </div>
-    </section>
+  <section class="home-skills">
+    <h2>What I Do</h2>
+    <div class="home-skills-grid">
+      <article class="home-skill"><i class="bx bx-message-square-edit"></i><h3>Storytelling</h3><p>Writing, editing, research and audience-focused communication.</p></article>
+      <article class="home-skill"><i class="bx bx-layout"></i><h3>Digital Design</h3><p>Web design, UX/UI, visual content and interactive prototypes.</p></article>
+      <article class="home-skill"><i class="bx bx-cube-alt"></i><h3>Creative Technology</h3><p>3D, XR/AR, animation, audio and experimental media.</p></article>
+    </div>
+  </section>
 
-    <section class="blog" id="blog">
-        <h2>Featured Blog Posts</h2>
-        <div class="blog-list">
-            <article class="blog-item">
-                <h3>Coming Soon</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                <a href="blog.html" class="btn-2">Read More</a>
-            </article>
-
-            <article class="blog-item">
-                <h3>Coming Soon</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                <a href="blog.html" class="btn-2">Read More</a>
-            </article>
-
-            <article class="blog-item">
-                <h3>Coming Soon</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                <a href="blog.html" class="btn-2">Read More</a>
-            </article>
-        </div>
-        <div class="blog-more">
-            <a href="blog.html" class="btn-2">View All Posts</a>
-        </div>
-    </section>
-
-    <section class="projects" id="projects">
-        <h2>Featured Projects</h2>
-        <div class="projects-list">
-            <div class="project-item">
-                <h3>Coming Soon</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                <a href="projects.html" class="btn-2">View Project</a>
-            </div>
-
-            <div class="project-item">
-                <h3>Coming Soon</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                <a href="projects.html" class="btn-2">View Project</a>
-            </div>
-
-            <div class="project-item">
-                <h3>Coming Soon</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                <a href="projects.html" class="btn-2">View Project</a>
-            </div>
-        </div>
-        <div class="projects-more">
-            <a href="projects.html" class="btn-2">View All Projects</a>
-        </div>
-    </section>
-
-   <section class="idm-gallery">
-  <h2 class="gallery-title">A Semester in IDM</h2>
-
-  <div class="image-container">
-      <span style="--i:1"><img src="./assets/images/Idm1.jpeg" alt="IDM moment 1"></span>
-      <span style="--i:2"><img src="./assets/images/Idm2.jpeg" alt="IDM moment 2"></span>
-      <span style="--i:3"><img src="./assets/images/Idm3.jpeg" alt="IDM moment 3"></span>
-      <span style="--i:4"><img src="./assets/images/Idm4.jpeg" alt="IDM moment 4"></span>
-      <span style="--i:5"><img src="./assets/images/Idm5.jpeg" alt="IDM moment 5"></span>
-      <span style="--i:6"><img src="./assets/images/Idm6.jpeg" alt="IDM moment 6"></span>
-      <span style="--i:7"><img src="./assets/images/Idm7.jpeg" alt="IDM moment 7"></span>
-      <span style="--i:8"><img src="./assets/images/Idm8.jpeg" alt="IDM moment 8"></span>
-  </div>
-
-  <div class="btn-container">
-      <button class="btn" id="Prev">Prev</button>
-      <button class="btn" id="Next">Next</button>
-  </div>
-</section>
-
-
-    <section class="contact-cta" id="contact">
-        <h2 class="contact-me">Let’s <span class="span1">Connect</span></h2>
-        <p>Interested in collaborating, chatting, or asking a question?</p>
-        <a href="contact.html" class="btn-2">Go to Contact Page</a>
-    </section>
-
-    <footer class="footer">
+  <section class="contact-cta" id="contact"><h2 class="contact-me">Let’s <span class="span1">Connect</span></h2><p>Interested in collaborating, chatting, or asking a question?</p><a href="contact.html" class="btn-2">Go to Contact Page</a></section>
+</main>
+<footer class="footer">
   <div class="social">
-    <a href="https://www.linkedin.com/in/lilly-majors-0a1413186" target="_blank" rel="noopener noreferrer">
-      <i class="bx bxl-linkedin"></i>
-    </a>
-    <a href="https://github.com/reddevii" target="_blank" rel="noopener noreferrer">
-      <i class="bx bxl-github"></i>
-    </a>
+    <a href="https://www.linkedin.com/in/lilly-majors-0a1413186" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+    <a href="https://github.com/reddevii" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bx bxl-github"></i></a>
   </div>
-
   <ul class="list">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Me</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About Me</a></li><li><a href="blog.html">Blog</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li>
   </ul>
-
   <p class="copyright">&copy; 2026 LDM Portfolio | All rights reserved.</p>
 </footer>
-
 </body>
 </html>
